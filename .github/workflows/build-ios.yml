@@ -1,7 +1,7 @@
 name: Build iOS frida-python extension
 
 on:
-  workflow_dispatch:  # 수동 실행
+  workflow_dispatch:
 
 jobs:
   build-ios:
@@ -28,7 +28,7 @@ jobs:
         make core-iphones PYTHON=python3
 
     - name: Archive built _frida.so
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3@cd9c58e7e054cf6220616c9866f4b9eb2b6d60a4
       with:
         name: frida-ios-python39-arm64
         path: build/tmp-ios-arm64/lib/python3.9/site-packages/frida/_frida.cpython-39-darwin.so
